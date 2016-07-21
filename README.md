@@ -61,3 +61,21 @@ buildpack's defaults work will be updated in this README over time.
 The Lua sandbox, including how you invoke it and include files inside it,
 hasn't yet been investigated in the context of this buildpack. PRs, comments
 and issues are welcome to address this!
+
+##Building the Buildpack
+
+Make sure you have fetched submodules
+
+git submodule update --init
+Get latest buildpack dependencies
+
+BUNDLE_GEMFILE=cf.Gemfile bundle
+Build the buildpack
+
+BUNDLE_GEMFILE=cf.Gemfile bundle exec buildpack-packager [ --cached | --uncached ]
+Use in Cloud Foundry
+
+Upload the buildpack to your Cloud Foundry and optionally specify it by name
+
+cf create-buildpack custom_node_buildpack node_buildpack-offline-custom.zip 1
+cf push my_app -b custom_node_buildpack
