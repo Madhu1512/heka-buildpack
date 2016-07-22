@@ -20,7 +20,7 @@ url_to_dependency_map:
 dependencies:
   - name: heka
     version: 0.10.0
-    uri: https://github.com/mozilla-services/heka/releases/download/v0.10.0/heka-0_10_0-linux-amd64.tar.gz
+    uri: file:///heka-0_10_0-linux-amd64.tar.gz
     cf_stacks:
       - cflinuxfs2
     md5: 89ff62fe2ccad3d462c9951de0c15e38
